@@ -10,10 +10,10 @@ def index(request):
 
 def weixin_token(request):
     try:
-        signature = request.GET['signature']
-        timestamp = request.GET['timestamp']
-        nonce = request.GET['nonce']
-        echostr = request.GET['echostr']
+        signature = request.GET.get('signature')
+        timestamp = request.GET.get('timestamp')
+        nonce = request.GET.get('nonce')
+        echostr = request.GET.get('echostr')
 
         token = 'token'
         sha1 = hashlib.sha1()
@@ -24,8 +24,8 @@ def weixin_token(request):
         hashcode = sha1.hexdigest()
 
         if hashcode == signature:
-            return echostr
+            return HttpResponse(echostr)
         else:
-            return ''
+            return HttpResponse('')
     except Exception as e:
-        return e
+        return HttpResponse(e)
