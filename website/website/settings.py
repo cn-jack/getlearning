@@ -25,7 +25,10 @@ SECRET_KEY = '2qd!a=)422&#o%j(ku+v$*x4jj3m#(j_i&gv3r5ia9bq&j&aj='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.getlearning.cn',
+    '127.0.0.1',
+]
 
 
 # Application definition
