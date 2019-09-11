@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('weixin', views.weixin, name='weixin'),
+    path('weixin_token', views.weixin_token, name='weixin_token'),
 ]
